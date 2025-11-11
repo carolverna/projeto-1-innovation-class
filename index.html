@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AVANTI - E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700;800;900&family=SF+Pro+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <div class="mobile-status-bar">
+        <div class="status-bar-notch">
+            <svg width="156" height="31" viewBox="0 0 156 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.26018 -1H154.692V14C154.692 23.3888 147.129 31 137.8 31H18.1519C8.82285 31 1.26018 23.3888 1.26018 14V-1Z" fill="black"/>
+                <path d="M1.49046 -1L0 -2C2.63371 -2 1.29117 1.14875 1.29117 3.79934C1.29117 3.86656 1.2898 3.93345 1.28708 4H1.49046V-1Z" fill="black"/>
+                <path d="M154.51 -1L156 -2C153.366 -2 154.709 1.14875 154.709 3.79934C154.709 3.86656 154.71 3.93345 154.713 4H154.51V-1Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="status-bar-content">
+            <div class="status-bar-left">
+                <span class="status-time">9:41</span>
+            </div>
+            <div class="status-bar-right">
+                <svg class="status-icon-signal" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 3C10 2.44772 10.4477 2 11 2H12C12.5523 2 13 2.44772 13 3V11C13 11.5523 12.5523 12 12 12H11C10.4477 12 10 11.5523 10 11V3Z" fill="black"/>
+                    <path d="M15 1C15 0.447715 15.4477 0 16 0H17C17.5523 0 18 0.447715 18 1V11C18 11.5523 17.5523 12 17 12H16C15.4477 12 15 11.5523 15 11V1Z" fill="black"/>
+                    <path d="M5 6.5C5 5.94772 5.44772 5.5 6 5.5H7C7.55228 5.5 8 5.94772 8 6.5V11C8 11.5523 7.55228 12 7 12H6C5.44772 12 5 11.5523 5 11V6.5Z" fill="black"/>
+                    <path d="M0 9C0 8.44772 0.447715 8 1 8H2C2.55228 8 3 8.44772 3 9V11C3 11.5523 2.55228 12 2 12H1C0.447715 12 0 11.5523 0 11V9Z" fill="black"/>
+                </svg>
+                <svg class="status-icon-wifi" width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50047 2.58753C10.967 2.58764 13.3393 3.55505 15.1269 5.28982C15.2615 5.42375 15.4766 5.42206 15.6092 5.28603L16.896 3.96045C16.9631 3.89146 17.0006 3.798 17 3.70076C16.9994 3.60353 16.9609 3.51052 16.893 3.44234C12.2011 -1.14745 4.79908 -1.14745 0.107163 3.44234C0.0391973 3.51047 0.000634479 3.60345 7.75932e-06 3.70069C-0.00061896 3.79792 0.0367421 3.89141 0.103824 3.96045L1.39096 5.28603C1.52346 5.42226 1.73878 5.42396 1.87331 5.28982C3.66116 3.55494 6.03367 2.58752 8.50047 2.58753ZM8.53591 6.58938C9.89112 6.58929 11.198 7.10346 12.2025 8.03199C12.3384 8.16376 12.5524 8.16091 12.6849 8.02555L13.9702 6.69997C14.0379 6.63044 14.0754 6.53611 14.0744 6.4381C14.0735 6.34008 14.034 6.24656 13.965 6.17844C10.9059 3.27385 6.16853 3.27385 3.10945 6.17844C3.04035 6.24656 3.00092 6.34013 3.00002 6.43817C2.99911 6.53622 3.0368 6.63054 3.10462 6.69997L4.38954 8.02555C4.52199 8.16091 4.73602 8.16376 4.87189 8.03199C5.87578 7.10408 7.18159 6.58995 8.53591 6.58938ZM11.1496 9.17672C11.1515 9.27501 11.1137 9.36977 11.0449 9.43863L8.82165 11.7289C8.75648 11.7962 8.66762 11.834 8.57491 11.834C8.4822 11.834 8.39334 11.7962 8.32817 11.7289L6.10452 9.43863C6.03583 9.36972 5.99804 9.27492 6.00008 9.17663C6.00212 9.07834 6.0438 8.98527 6.11528 8.91938C7.53515 7.69354 9.61467 7.69354 11.0345 8.91938C11.106 8.98532 11.1476 9.07843 11.1496 9.17672Z" fill="black"/>
+                </svg>
+                <svg class="status-icon-battery" width="28" height="13" viewBox="0 0 28 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.35" d="M4 0.527344H21C22.9178 0.527344 24.4727 2.08222 24.4727 4V9C24.4727 10.9178 22.9178 12.4727 21 12.4727H4C2.08222 12.4727 0.527344 10.9178 0.527344 9V4C0.527344 2.08222 2.08222 0.527344 4 0.527344Z" stroke="black" stroke-width="1.05509"/>
+                    <path opacity="0.4" d="M26 5V9.22034C26.8491 8.86291 27.4012 8.0314 27.4012 7.11017C27.4012 6.18894 26.8491 5.35744 26 5Z" fill="black"/>
+                    <path d="M2 4C2 2.89543 2.89543 2 4 2H15C16.1046 2 17 2.89543 17 4V9C17 10.1046 16.1046 11 15 11H4C2.89543 11 2 10.1046 2 9V4Z" fill="black"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-promo-header">
+        <p><span class="promo-bold">Ganhe  R$10,00  de desconto no seu primeiro pedido.
+Utilize o cupom</span> DESCONTO10</p>
+    </div>
+
+    <div class="mobile-header-wrapper">
+        <div class="mobile-header-white">
+            <button class="mobile-menu-icon">
+                <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="1" y1="1" x2="23" y2="1" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="10.5" x2="23" y2="10.5" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="20" x2="23" y2="20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="mobile-logo">
+                <img src="https://api.builder.io/api/v1/image/assets/TEMP/470e30bad174993f02cbc5d0cccc1a73b9c53af7?width=296" alt="AVANTI">
+            </div>
+            <div class="mobile-cart-wrapper">
+                <svg class="mobile-cart-icon" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.70369 24.1552C8.30831 24.016 7.87645 23.9377 7.52365 23.7272C5.83538 22.7196 5.80301 20.2885 7.44982 19.2098C7.61749 19.0999 7.64844 19.0115 7.59646 18.8225C6.44088 14.6185 5.28827 10.4136 4.1454 6.20607C3.71276 4.61315 3.30584 3.01324 2.88674 1.41665C2.8665 1.33949 2.84185 1.2635 2.8153 1.17353H0V0H3.3739C3.66944 0.104298 3.813 0.318614 3.88913 0.620456C4.09577 1.44007 4.32632 2.25367 4.54758 3.06957C4.74703 3.80517 4.94668 4.54073 5.14994 5.28989H5.48005C11.734 5.28989 17.9879 5.2915 24.2418 5.28578C24.6018 5.28549 24.8769 5.38211 25.0353 5.72096V6.06324C25.0055 6.13625 24.9672 6.20695 24.9469 6.28255C24.126 9.33876 23.3065 12.3953 22.4874 15.4521C22.1652 16.6548 21.3131 17.3109 20.0665 17.3111C16.4075 17.3115 12.7485 17.3118 9.08944 17.3097C8.87307 17.3095 8.6567 17.2872 8.42424 17.2743C8.53367 17.6735 8.65714 18.0539 8.73762 18.4433C8.78686 18.6816 8.88906 18.7427 9.12562 18.7422C12.801 18.7342 16.4763 18.7344 20.1516 18.7378C21.5774 18.7391 22.7065 19.7701 22.8697 21.2048C23.0194 22.521 22.093 23.7758 20.746 24.0807C20.6278 24.1074 20.5088 24.1304 20.3901 24.1552H19.9989C19.9441 24.1409 19.8901 24.1211 19.8344 24.1132C17.9238 23.8406 16.9124 21.7965 17.8538 20.1094C17.8873 20.0495 17.9168 19.9874 17.9525 19.9182H11.1567C11.2144 20.0242 11.2616 20.1081 11.3063 20.1932C12.0689 21.6472 11.3731 23.4361 9.82632 23.9826C9.60599 24.0604 9.37162 24.0986 9.14376 24.1552H8.70369ZM23.6771 6.47403H5.44215C5.46269 6.56576 5.47687 6.64439 5.49799 6.72111C6.27443 9.54423 7.05204 12.367 7.82809 15.1902C8.02387 15.9025 8.40703 16.1971 9.15173 16.1972C12.7692 16.1974 16.3867 16.1974 20.0042 16.1972C20.801 16.1972 21.1651 15.9152 21.3684 15.1506C21.9306 13.0362 22.4948 10.9222 23.0577 8.80799C23.2624 8.03927 23.4659 7.27027 23.6771 6.47403ZM20.2017 22.9907C21.0543 22.987 21.7384 22.3029 21.7411 21.4513C21.7439 20.5972 21.0397 19.8972 20.1824 19.9017C19.3374 19.9061 18.6439 20.6012 18.6419 21.4459C18.6397 22.3032 19.3376 22.9944 20.2017 22.9907ZM8.91336 22.9909C9.76828 22.9942 10.4578 22.3192 10.4659 21.471C10.4743 20.6065 9.78969 19.9049 8.93463 19.9017C8.0849 19.8984 7.38943 20.5815 7.38215 21.4266C7.37466 22.2964 8.05116 22.9876 8.91336 22.9909Z" fill="black"/>
+                </svg>
+                <div class="mobile-cart-badge">
+                    <span>2</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-search-container">
+            <div class="mobile-search-bar">
+                <input type="text" placeholder="Digite aqui o que você procura">
+                <button class="mobile-search-button">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.3629 0C8.69891 0.0480956 9.03741 0.0832269 9.37057 0.146514C10.9895 0.454005 12.3752 1.20579 13.5286 2.3775C14.5778 3.44342 15.2714 4.70986 15.5693 6.17855C15.9436 8.02473 15.6853 9.78532 14.7601 11.4287C14.4637 11.9552 14.0889 12.4376 13.7501 12.9401C13.7181 12.9522 13.6862 12.9642 13.6541 12.9762C13.7143 13.0072 13.7866 13.0258 13.8328 13.0711C15.3654 14.5751 16.8966 16.0806 18.4235 17.5904C18.5326 17.6982 18.6071 17.8409 18.6978 17.9674V18.223C18.6181 18.4599 18.4552 18.6134 18.223 18.6978H17.9674C17.8202 18.5941 17.6555 18.5085 17.5286 18.3842C15.9975 16.8856 14.472 15.3813 12.9449 13.8786C12.9064 13.8408 12.8659 13.8048 12.8191 13.7612C12.7663 13.7972 12.7155 13.8286 12.6683 13.8646C11.6533 14.6382 10.5152 15.1428 9.26046 15.3566C7.38521 15.6761 5.60063 15.3961 3.94278 14.4417C2.21795 13.4487 1.02144 12.0114 0.381222 10.1218C0.19136 9.56138 0.0757405 8.98372 0.031589 8.39252C0.0281197 8.34559 0.0108827 8.29968 0 8.25331V7.23077C0.0111748 7.17818 0.0251616 7.12604 0.0330497 7.07297C0.0785525 6.76669 0.106197 6.45668 0.169996 6.1543C0.475332 4.70727 1.15265 3.45485 2.1853 2.39883C3.34467 1.21327 4.73853 0.453859 6.37111 0.145273C6.69182 0.0846146 7.01714 0.0478034 7.34037 0H8.3629ZM1.20747 7.70234C1.22185 7.97342 1.22109 8.19973 1.24771 8.42279C1.41628 9.83509 1.9537 11.0874 2.93504 12.1236C4.65216 13.9367 6.77355 14.6182 9.20455 14.1453C11.3358 13.7307 12.9285 12.5043 13.8726 10.532C14.8242 8.54411 14.7663 6.53479 13.7007 4.61389C12.6086 2.64493 10.8855 1.5227 8.65103 1.24789C6.88662 1.03086 5.26393 1.46021 3.84191 2.53782C2.1219 3.84129 1.26637 5.59713 1.20747 7.70234Z" fill="black"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="mobile-banner-promo">
+        <div class="mobile-banner-slide">
+            <div class="mobile-banner-background">
+                <img src="https://api.builder.io/api/v1/image/assets/TEMP/7878e47c5ac4c29f07f44ecd1839f6002082ce4a?width=450" alt="Super Sale" class="mobile-banner-image">
+                <div class="mobile-banner-content">
+                    <div class="mobile-banner-text-wrapper">
+                        <h2 class="mobile-banner-title">
+                            <span class="mobile-banner-super">super</span>
+                            <span class="mobile-banner-sale">sale</span>
+                        </h2>
+                        <p class="mobile-banner-subtitle">Selected items up to</p>
+                        <p class="mobile-banner-discount">50%off</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-banner-pagination">
+                <svg width="35" height="7" viewBox="0 0 35 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="3.5" cy="3.5" r="3.5" fill="#303030"/>
+                    <circle cx="17.5" cy="3.5" r="3.5" fill="#838383"/>
+                    <circle cx="31.5" cy="3.5" r="3.5" fill="#838383"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="promo-bar">
+        <div class="container">
+            <p>Ganhe <span class="tag-roxa">R$10,00</span> de desconto no seu primeiro pedido. Utilize o cupom <i>DESCONTO10</i></p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="logo">
+                        <img src="images/logo.svg" alt="AVANTI">
+                    </div>
+                    
+                   <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Digite aqui o que você procura">
+                      <button id="searchButton" class="search-button">
+                   <img src="images/lupa.png" alt="Lupa" class="search-icon">
+                </button>
+                </div>
+                    
+                    <div class="header-actions">
+                        <a href="#" class="user-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                                <circle cx="10" cy="7" r="3" stroke-width="2"/>
+                                <path d="M4 18c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Olá,<br>Nome cliente!</span>
+                        </a>
+                        <a href="#" class="cart-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 2L7 6M17 2l2 4M3 6h18M5 6l2 14h10l2-14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span class="cart-count">2</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-categories">
+                        <button class="categories-button" id="categoriesButton">
+                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0" y1="5" x2="14" y2="5" stroke="currentColor"/>
+                                <line x1="0" y1="10" x2="14" y2="10" stroke="currentColor"/>
+                                <line x1="0" y1="0" x2="14" y2="0" stroke="currentColor"/>
+                            </svg>
+                            <span>Todas as Categorias</span>
+                        </button>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                        <div class="department-mega-menu">
+                                <div class="department-mega-content">
+                                    <div class="department-mega-categories">
+                                        <div class="department-mega-column">
+                                            <h3><a href="#">Categoria</a></h3>
+                                            <ul>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="department-mega-column">
+                                            <h3><a href="#">Categoria</a></h3>
+                                            <ul>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="department-mega-column">
+                                            <h3><a href="#">Categoria</a></h3>
+                                            <ul>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                                <li><a href="#">Categoria</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="department-mega-promo">
+                        <div class="promo-card">
+                            <img src="images/mug-lifestyle.png" alt="Produtos em destaque">
+                            <div class="promo-card-content">
+                                <h3>Confira os<br>Produtos<br>que<br>acabaram<br>De chegar</h3>
+                                <a href="#" class="promo-button">VER TODOS</a>
+                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    <li class="has-mega-menu">
+                        <a href="#">Departamento</a>
+                    </li>
+                    
+                    </ul>
+            </div>
+        </nav>
+
+        <div class="mega-menu" id="megaMenu">
+                <div class="mega-menu-content">
+                    <div class="mega-menu-sidebar">
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#005CFF"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                        <div class="mega-menu-item">
+                            <a href="#">Departamento</a>
+                            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.45948 4.53932L1.27979 7.77623C0.987123 8.07459 0.512778 8.07459 0.219501 7.77623C-0.0731669 7.47892 -0.0731669 6.99559 0.219501 6.6978L2.86978 3.99986L0.219501 1.30232C-0.0731669 1.00453 -0.0731669 0.521848 0.219501 0.223405C0.512778 -0.0744686 0.987123 -0.0744686 1.27979 0.223405L4.45948 3.46032C4.60614 3.60958 4.67943 3.8048 4.67943 4.00002C4.67943 4.19524 4.60614 4.39038 4.45948 4.53932Z" fill="#303030"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="mega-menu-categories">
+                        <div class="mega-menu-column">
+                            <h3>Categoria</h3>
+                            <ul>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Categoria</h3>
+                            <ul>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h3>Categoria</h3>
+                            <ul>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                                <li><a href="#">Categoria</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mega-menu-promo">
+                        <div class="promo-card">
+                            <img src="images/mug-lifestyle.png" alt="Produtos em destaque">
+                            <div class="promo-card-content">
+                                <h3>Confira os<br>Produtos<br>que<br>acabaram<br>De chegar</h3>
+                                <a href="#" class="promo-button">VER TODOS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </header>
+
+
+    <div id="searchResult" class="search-result"></div>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-left">
+                    <img src="images/clothing-chair.png" alt="Roupas empilhadas">
+                </div>
+                <div class="hero-text-right">
+                    <div class="supersale-text">
+<h1 class="supersale-title">
+    <span class="super-bold">SUPER</span><span class="sale-light">SALE</span>
+</h1>
+<h2 class="supersale-subtitle">
+    <span>ITENS SELECIONADOS COM ATÉ</span>
+</h2>
+<p class="supersale-discount">50%OFF</p>
+                    </div>
+                   </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lançamentos</h2>
+                <a href="#" class="view-all">Ver mais</a>
+            </div>
+            
+            <div class="swiper productsSwiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next">
+                    <img src="images/arrow-right.png" alt="Próximo">
+                </div>
+                <div class="swiper-button-prev">
+                    <img src="images/arrow-left.png" alt="Anterior">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="images/mug-product.png" alt="AVANTI Mug">
+                </div>
+                <div class="content-text">
+                    <h2>LOREM IPSUM</h2>
+                    <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+                    <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section features-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>LOREM IPSUM</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <img src="images/location-icon.png" alt="Ícone 1" class="feature-icon">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                        <div class="feature-item">
+                            <img src="images/location-icon.png" alt="Ícone 2" class="feature-icon">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                        <div class="feature-item">
+                            <img src="images/location-icon.png" alt="Ícone 3" class="feature-icon">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="images/mug-lifestyle.png" alt="AVANTI Mug">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="images/mug-product.png" alt="AVANTI Mug">
+                </div>
+                <div class="content-text">
+                    <h2>LOREM IPSUM</h2>
+                    <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+                    <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lançamentos</h2>
+                <a href="#" class="view-all">Ver mais</a>
+            </div>
+            
+            <div class="swiper productsSwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-badge">Novo</div>
+                            <div class="product-image-wrapper">
+                                <img src="images/product-tshirt.png" alt="Camiseta Branca">
+                                <span class="discount-badge">10% off</span>
+                            </div>
+                            <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
+                            <div class="product-price">
+                                <span class="price-old">R$ 100,00</span>
+                                <span class="price-new">R$79,90</span>
+                            </div>
+                            <p class="installments">Ou em até <span class="bold">10x de R$ 7,90</span></p>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next">
+                    <img src="images/arrow-right.png" alt="Próximo">
+                </div>
+                <div class="swiper-button-prev">
+                    <img src="images/arrow-left.png" alt="Anterior">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-banner">
+        <div class="hero-banner-content">
+            <img src="images/hero-banner.png" alt="AVANTI Banner">
+            <div class="hero-banner-overlay">
+                <p>Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <p class="newsletter-subtitle">Cadastre-se na nossa <a href="#" class="newsletter-link">newsletter</a></p>
+            <div class="newsletter-content">
+                <form class="newsletter-form">
+                    <input type="text" placeholder="Digite seu nome" required>
+                    <input type="email" placeholder="Digite seu e-mail" required>
+                    <label class="newsletter-checkbox">
+                        <input type="checkbox" required>
+                        <span>Estou de acordo com a <a href="#">Política de Privacidade</a></span>
+                    </label>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top-section">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column footer-brand">
+                        <img src="images/logo.svg" alt="AVANTI" class="footer-logo">
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="#005CFF" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="4" stroke="#005CFF" stroke-width="2"/>
+                                    <circle cx="17.5" cy="6.5" r="1.5" fill="#005CFF"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#005CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" stroke="#005CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#005CFF"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="TikTok">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#005CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Institucional</h4>
+                        <ul>
+                            <li><a href="#">Nossas Lojas</a></li>
+                            <li><a href="#">Privacidade e Segurança</a></li>
+                            <li><a href="#">Termos e Condições</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Central de ajuda</h4>
+                        <ul>
+                            <li><a href="#">Fale Conosco</a></li>
+                            <li><a href="#">Frete e Entrega</a></li>
+                            <li><a href="#">Trocas e Devoluções</a></li>
+                            <li><a href="#">Formas de Pagamento</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column footer-contact">
+                        <h4>Atendimento</h4>
+                        <p><strong>Telefone:</strong> (00) 1234-5678</p>
+                        <p><strong>E-mail:</strong> exemplo@exemplo.com.br</p>
+                        <p class="schedule-title"><strong>Horário de atendimento:</strong></p>
+                        <p class="schedule-text">Segunda a Sábado: 07h00 às 23h00<br>Domingos e Feriados:  07h00 às 21h00</p>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <img src="images/amex.png" alt="American Express">
+                    <img src="images/mastercard.png" alt="Mastercard">
+                    <img src="images/visa.png" alt="Visa">
+                    <img src="images/hipercard.png" alt="Hipercard">
+                    <img src="images/elo.png" alt="Elo">
+                    <img src="images/diners.png" alt="Diners Club">
+                    <img src="images/paypal.png" alt="PayPal">
+                    <img src="images/pix.png" alt="Pix">
+                    <img src="images/boleto.png" alt="Boleto">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-section">
+            <div class="container">
+                <div class="footer-legal">
+                    <p class="footer-legal-desktop">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <p class="footer-legal-mobile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+                </div>
+
+                <div class="footer-security">
+                    <img src="images/letsencrypt.png" alt="Let's Encrypt" class="security-logo">
+                    <img src="images/vtex-pci.png" alt="VTEX PCI Certified" class="security-logo">
+                    <div class="security-divider"></div>
+                    <svg class="security-logo avanti-logo" width="58" height="11" viewBox="0 0 58 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M56.6511 0.00131682C56.2844 0.0326123 56.0043 0.342148 56.0098 0.710111V9.47323C56.0042 9.84127 56.2843 10.1509 56.6511 10.1822C56.8393 10.1939 57.024 10.1272 57.1614 9.99805C57.2989 9.86888 57.3769 9.68867 57.3769 9.50006V0.683499C57.3769 0.494863 57.299 0.314615 57.1615 0.185432C57.0241 0.0562503 56.8393 -0.0103808 56.6511 0.00131682Z" fill="black"/>
+                        <path d="M19.4427 0.0732762C19.1014 -0.0976267 18.6861 0.0406038 18.5153 0.382005L14.6961 8.0137C14.6954 8.01497 14.6941 8.01578 14.6927 8.01578C14.6913 8.01578 14.69 8.01497 14.6894 8.0137L10.8702 0.382005C10.6943 0.0502919 10.2858 -0.0803503 9.95009 0.0877599C9.61438 0.25587 9.47427 0.661242 9.63452 1.00078L14.0385 9.80179C14.1557 10.0361 14.3952 10.184 14.6572 10.1838C14.6689 10.1838 14.6808 10.1824 14.6927 10.1818C14.7045 10.1813 14.7164 10.1838 14.7283 10.1838C14.9902 10.184 15.2298 10.0361 15.3469 9.80179L19.7515 1.00078C19.9223 0.659399 19.7841 0.244166 19.4427 0.0732762Z" fill="black"/>
+                        <path d="M41.4402 0.0698283C41.0728 0.101444 40.7922 0.411623 40.7976 0.780375V7.46913L40.7952 7.47277L40.791 7.47143L35.2676 0.268164C35.051 -0.0137669 34.655 -0.0835473 34.3551 0.107393C34.1544 0.239369 34.0352 0.464859 34.0392 0.705027V9.47187C34.0337 9.84056 34.3142 10.1507 34.6816 10.1823C34.8703 10.194 35.0554 10.1272 35.1931 9.99774C35.3309 9.86827 35.409 9.68763 35.409 9.49859V2.71466L35.4115 2.71125L35.4156 2.71237L40.9392 9.91541C41.1592 10.2023 41.5643 10.269 41.8647 10.0677C42.0578 9.93442 42.1715 9.71347 42.1677 9.47888V0.753543C42.1677 0.564604 42.0896 0.383956 41.9519 0.254466C41.814 0.124923 41.6289 0.0581331 41.4402 0.0698283Z" fill="black"/>
+                        <path d="M53.2761 8.21882e-05H44.9986C44.6306 -0.00550628 44.3209 0.274551 44.2895 0.641305C44.278 0.82953 44.3446 1.01419 44.4738 1.15159C44.603 1.28899 44.7832 1.36693 44.9717 1.36696L48.4369 1.36696C48.4389 1.36702 48.4405 1.36865 48.4406 1.37069L48.4406 9.47331C48.435 9.84128 48.7149 10.1509 49.0816 10.1823C49.2698 10.1939 49.4545 10.1272 49.5919 9.99808C49.7293 9.86891 49.8072 9.68872 49.8072 9.50014V1.37069L49.8108 1.36696L53.2496 1.36696C53.6176 1.37244 53.9271 1.09241 53.9584 0.725742C53.97 0.537497 53.9033 0.352822 53.7741 0.215417C53.6449 0.078012 53.4647 8.72536e-05 53.2761 8.21882e-05Z" fill="black"/>
+                        <path d="M5.78632 0.381671C5.66322 0.135811 5.40608 -0.0136823 5.13152 0.000989584C4.85744 -0.0130612 4.601 0.136325 4.47803 0.381671L0.0732568 9.18301C-0.0976123 9.52438 0.0406101 9.93964 0.381985 10.1105C0.72336 10.2814 1.13862 10.1432 1.30949 9.80178L2.39151 7.6398C2.39211 7.63853 2.39339 7.63772 2.3948 7.63772H7.86956C7.87096 7.63772 7.87225 7.63853 7.87284 7.6398L8.95487 9.80178C9.12574 10.1431 9.54097 10.2813 9.88231 10.1105C10.2237 9.93959 10.3619 9.52435 10.191 9.18301L5.78632 0.381671ZM2.91402 6.59556L5.12889 2.16998C5.12948 2.16869 5.13076 2.16787 5.13218 2.16787C5.13359 2.16787 5.13487 2.16869 5.13546 2.16998L7.35045 6.59556C7.35102 6.59669 7.35097 6.59804 7.35029 6.59912C7.34962 6.60019 7.34843 6.60084 7.34716 6.60082H2.91731C2.91604 6.60084 2.91485 6.60019 2.91417 6.59912C2.9135 6.59804 2.91344 6.59669 2.91402 6.59556Z" fill="black"/>
+                        <path d="M31.9609 9.24732C31.9527 9.2241 31.9432 9.20139 31.9323 9.17931L27.8762 0.98371C27.6679 0.502075 27.2339 0.155339 26.7182 0.0583591C26.2024 -0.0386205 25.6722 0.126815 25.3031 0.499864L24.3065 2.39736L21.9148 7.43514C21.5199 8.19628 20.8971 8.70028 20.1553 8.87672L23.8175 1.50271C23.8249 1.48771 23.8317 1.47248 23.8379 1.45704C23.8978 1.32248 24.0313 1.23584 24.1786 1.23604C24.1925 1.23627 24.2063 1.2373 24.22 1.2391L24.8223 0.167699C24.4364 -0.00437239 23.9977 -0.0146862 23.6041 0.139062C23.2106 0.292811 22.895 0.597807 22.7279 0.985901L18.6676 9.16266C18.6614 9.17438 18.6556 9.18632 18.6501 9.1987C18.5598 9.39843 18.5735 9.62974 18.6865 9.8175C18.7996 10.0053 18.9976 10.1255 19.2164 10.1392C19.3269 10.1484 19.4387 10.153 19.5492 10.153C21.0028 10.153 22.2894 9.34074 22.9904 7.97977C22.9934 7.97396 22.9964 7.96816 22.9991 7.96214L25.2812 3.15467L25.2819 3.15313L25.3021 3.11064L25.9702 1.70718L25.9692 1.7051L26.0697 1.49329C26.074 1.48439 26.0779 1.47544 26.0817 1.46646C26.1395 1.32697 26.2757 1.23603 26.4267 1.23603C26.5777 1.23603 26.7138 1.32697 26.7716 1.46646C26.7766 1.47862 26.7826 1.49066 26.788 1.50249L30.4373 8.87639C29.7007 8.69941 29.081 8.19574 28.6867 7.43536L26.2849 2.3702L25.6218 3.78472L27.6021 7.96126C27.605 7.96717 27.6079 7.9732 27.6109 7.97911C28.3227 9.36034 29.573 10.1524 31.0422 10.1524C31.1581 10.1524 31.2755 10.1472 31.3911 10.1371C31.4642 10.1309 31.5356 10.1112 31.6017 10.0791C31.923 9.94059 32.0806 9.57609 31.9609 9.24732Z" fill="black"/>
+                    </svg>
+                    <img src="images/vtex-logo.png" alt="VTEX" class="security-logo">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
