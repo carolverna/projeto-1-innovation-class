@@ -25,6 +25,9 @@ O objetivo foi reproduzir o design com **fidelidade visual**, respeitando:
 
 ---
 
-## 🔍 Funcionalidade de Busca
-Ao digitar um termo no campo de busca e clicar no botão de lupa, é exibida a mensagem:
+## 🌐 Acesse o Projeto Online
+
+Você pode visualizar o projeto diretamente no link abaixo:
+
+🔗 **https://projeto-1-innovation-class.vercel.app/**
 
